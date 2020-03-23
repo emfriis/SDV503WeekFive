@@ -12,6 +12,24 @@ for (let i = 0; i < 3; i++) {
     console.log(i)
 }
 
+let c = 0;
+mark: for (let i = 0; i < 5; i++) {
+    inner: for (let j = 0; j < 5; j++) {
+        c++;
+        if (i == 2) 
+            break mark; // Breaks iteration at point mark when condition is satisfied, so the increment on c occurs 11 times before condition is satisfied because nested for loop is executed twice (so c is 10), then the increment to c is executed one additional time when the condition is satisfied.
+    };
+};
+console.log(c);
+
+function* generatorFunction() { // The function* declaration defines a generator function.
+    yield 1;
+    yield 2;
+    yield 3;
+};
+for (let value of generatorFunction())
+    console.log(value);
+
 let arrayItterFirst = [0, 1, 2, 3];
 for (let valueItterFirst of arrayItterFirst)
     console.log(valueItterFirst);
@@ -43,3 +61,23 @@ let arrayItterThird = ["potato", "spinach", "lettuce"];
 arrayItterThird.forEach(function(item, index, object) {
     console.log(item, index, object);
 });
+
+let arrayItterFourth = ["a", "b", "c"];
+arrayItterFourth.forEach((item, index, object) => {
+    console.log(item, index, object);
+});
+
+let arrayItterFifth = [3, 5, 8, 13];
+let resultFirst = arrayItterFifth.every(value => value < 10);
+console.log(resultFirst);
+
+let arrayItterSixth = [0, 1, 20, 2];
+let resultSecond = arrayItterSixth.every(function (value) {
+    console.log(value); // Stops iterating on values when it finds one that evaluates to false.
+    return value < 10;
+});
+console.log(resultSecond);
+
+let arrayItterSeventh = [1, 2, 3];
+let resultThird = arrayItterSeventh.some(value => value > 10);
+console.log(resultThird);
