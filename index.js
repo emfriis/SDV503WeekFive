@@ -30,6 +30,17 @@ function* generatorFunction() { // The function* declaration defines a generator
 for (let value of generatorFunction())
     console.log(value);
 
+let objectFirst = { valFirst: 1, valSecond: 3 };
+
+for (let key of Object.keys( objectFirst ))
+    console.log(key);
+
+for (let value of Object.values( objectFirst ))
+    console.log(value);
+
+for (let entry of Object.entries( objectFirst ))
+    console.log(entry);
+
 let arrayItterFirst = [0, 1, 2, 3];
 for (let valueItterFirst of arrayItterFirst)
     console.log(valueItterFirst);
@@ -78,6 +89,14 @@ let resultSecond = arrayItterSixth.every(function (value) {
 });
 console.log(resultSecond);
 
-let arrayItterSeventh = [1, 2, 3];
-let resultThird = arrayItterSeventh.some(value => value > 10);
+let arrayItterSeventh = [1, 200, 300];
+let resultThird = arrayItterSeventh.some(value => value < 10);
 console.log(resultThird);
+
+let arrayItterEight = [3, 6, 9, 12, 15];
+let arrayFiltered = arrayItterEight.filter(value => value < 10);
+console.log(arrayFiltered);
+
+let arrayItterNinth = [0, 1, 2];
+let arrayMapped = arrayItterNinth.map(value => ++value);
+console.log(arrayMapped);
