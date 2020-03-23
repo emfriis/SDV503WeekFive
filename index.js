@@ -32,13 +32,13 @@ for (let value of generatorFunction())
 
 let objectFirst = { valFirst: 1, valSecond: 3 };
 
-for (let key of Object.keys( objectFirst ))
+for (let key of Object.keys( objectFirst )) // Retrieves an array of keys from the object.
     console.log(key);
 
-for (let value of Object.values( objectFirst ))
+for (let value of Object.values( objectFirst )) // Retrieves an array of values from the object.
     console.log(value);
 
-for (let entry of Object.entries( objectFirst ))
+for (let entry of Object.entries( objectFirst )) // Retrieves an array of entries from the object.
     console.log(entry);
 
 let arrayItterFirst = [0, 1, 2, 3];
@@ -100,3 +100,5 @@ console.log(arrayFiltered);
 let arrayItterNinth = [0, 1, 2];
 let arrayMapped = arrayItterNinth.map(value => ++value);
 console.log(arrayMapped);
+
+let arrayItterTenth = ["h", "e", "l", "l", "o"];
