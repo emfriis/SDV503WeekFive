@@ -102,3 +102,8 @@ let arrayMapped = arrayItterNinth.map(value => ++value);
 console.log(arrayMapped);
 
 let arrayItterTenth = ["h", "e", "l", "l", "o"];
+let arrayReduceFirst = (accumulator, currentValue) => accumulator + currentValue;
+console.log(arrayItterTenth.reduce(arrayReduceFirst));
+
+let arrayItterEleventh = [5, "15", 10];
+console.log(arrayItterEleventh.reduce((accumulator, currentValue) => accumulator + currentValue)); // Converts numbers and returns a concantenated string.
